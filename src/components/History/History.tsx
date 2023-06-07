@@ -6,13 +6,14 @@ type Inputs = {
 
 interface myProps {
     results: Array<any>
+    remove: any
 }
 
 const History = (props: myProps) => {
 
     const {handleSubmit, register, formState: {errors}} = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = formData => {
-        console.log(formData.remove);
+        props.remove(formData.remove);
     };
 
     let elements = props.results.map(item => {
