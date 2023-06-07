@@ -3,6 +3,8 @@ import {SubmitHandler, useForm} from 'react-hook-form'
 import Cookies from 'universal-cookie';
 import './App.css';
 import {isNumber} from "./utils/validators/validators";
+import HomePage from "./components/HomePage/HomePage";
+import {Routes} from "react-router";
 
 
 type Inputs = {
@@ -10,7 +12,7 @@ type Inputs = {
     field2: number,
 }
 
-function calculate(v1: number, v2: number){
+function calculate(v1: number, v2: number) {
     return v1 + v2;
 }
 
@@ -21,47 +23,54 @@ function App() {
     const {handleSubmit, register, formState: {errors}} = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = formData => {
         console.log(formData);
-        let result:number = calculate(+formData.field1, +formData.field2)
+        let result: number = calculate(+formData.field1, +formData.field2)
         console.log(result);
         //coockie.set("",result, {})
     };
 
 
-  return (
-    <div className="app-wrapper">
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div>
-                <input placeholder="field1"
-                       {...register(
-                           "field1",
-                           {
-                               required: 'This field is required',
-                               validate: {v: (v) => isNumber(v) || "value is not a number"}
-                           })}
-                       className={errors.field1 ? "field1 Error" : undefined}/>
-                {errors.field1 && <span>{errors.field1?.message}</span>}
+    return (
+        <div className="app-wrapper">
+            <HomePage/>
+            <div className="app-wrapper-content">
+                <Routes>
+                    {/*<Route path='/calculateForm' element={<CalculateForm />}/>*/}
+                    {/*<Route path='/history' element={<History />}/>*/}
+                </Routes>
             </div>
-            <div>
-                <input placeholder="field2"
-                       {...register(
-                           "field2",
-                           {
-                               required: 'This field is required',
-                               validate: {v: (v) => isNumber(v) || "value is not a number"}
-                           })}
-                       className={errors.field2 ? "passwordError" : undefined}/>
-                {errors.field2 && <span>{errors.field2?.message}</span>}
-            </div>
-            <div>
-                <input type="submit"/>
-            </div>
-        </form>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <div>
+                    <input placeholder="field1"
+                           {...register(
+                               "field1",
+                               {
+                                   required: 'This field is required',
+                                   validate: {v: (v) => isNumber(v) || "value is not a number"}
+                               })}
+                           className={errors.field1 ? "field1 Error" : undefined}/>
+                    {errors.field1 && <span>{errors.field1?.message}</span>}
+                </div>
+                <div>
+                    <input placeholder="field2"
+                           {...register(
+                               "field2",
+                               {
+                                   required: 'This field is required',
+                                   validate: {v: (v) => isNumber(v) || "value is not a number"}
+                               })}
+                           className={errors.field2 ? "passwordError" : undefined}/>
+                    {errors.field2 && <span>{errors.field2?.message}</span>}
+                </div>
+                <div>
+                    <input type="submit"/>
+                </div>
+            </form>
 
-      <select>
+            <select>
 
-      </select>
-    </div>
-  );
+            </select>
+        </div>
+    );
 }
 
 export default App;
