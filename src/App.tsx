@@ -2,6 +2,7 @@ import React from 'react';
 import {SubmitHandler, useForm} from 'react-hook-form'
 import Cookies from 'universal-cookie';
 import './App.css';
+import {isNumber} from "./utils/validators/validators";
 
 
 type Inputs = {
@@ -9,11 +10,6 @@ type Inputs = {
     field2: number,
 }
 
-function isNumber(str: any) {
-    if (typeof str != "string") return false // we only process strings!
-    return !isNaN(Number(str)) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
-        !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
-}
 function calculate(v1: number, v2: number){
     return v1 + v2;
 }
