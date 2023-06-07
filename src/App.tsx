@@ -4,6 +4,7 @@ import HomePage from "./components/HomePage/HomePage";
 import {Routes, Route} from "react-router";
 import CalculateForm from "./components/CalculateForm/CalculateForm";
 import Header from "./components/Header/Header";
+import HistoryContainer from "./components/History/HistoryContainer";
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<HomePage />}/>
                     <Route path='/calculate' element={<CalculateForm />}/>
-                    {/*<Route path='/history' element={<History />}/>*/}
+                    <Route path='/history' element={<HistoryContainer />}/>
                 </Routes>
             </div>
         </div>

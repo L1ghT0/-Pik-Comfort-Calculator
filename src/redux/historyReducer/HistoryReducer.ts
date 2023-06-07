@@ -2,7 +2,12 @@ import {createSlice} from "@reduxjs/toolkit";
 
 
 let initialState = {
-    results: [],
+    results: [
+        {date: "date", result: "result", valueFromField1: "test1", valueFromField2: "test2"},
+        {date: "date", result: "result", valueFromField1: "test1", valueFromField2: "test2"},
+        {date: "date", result: "result", valueFromField1: "test1", valueFromField2: "test2"},
+        {date: "date", result: "result", valueFromField1: "test1", valueFromField2: "test2"},
+    ],
 }
 
 const historySlice = createSlice({
