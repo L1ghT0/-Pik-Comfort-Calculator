@@ -1,10 +1,11 @@
 import {connect} from "react-redux";
 import History from "./History";
 import {remove} from "../../redux/historyReducer/HistoryReducer";
+import {ActionCreatorWithPayload} from "@reduxjs/toolkit";
 
 interface myProps {
     results: Array<any>
-    remove: typeof remove
+    remove: ActionCreatorWithPayload<any>
 }
 
 const HistoryContainer = (props: myProps) => {

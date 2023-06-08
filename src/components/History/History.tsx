@@ -1,4 +1,5 @@
 import {SubmitHandler, useForm} from "react-hook-form";
+import {ActionCreatorWithPayload} from "@reduxjs/toolkit";
 
 type Inputs = {
     remove: boolean,
@@ -6,7 +7,7 @@ type Inputs = {
 
 interface myProps {
     results: Array<any>
-    remove: any
+    remove: ActionCreatorWithPayload<any>
 }
 
 const History = (props: myProps) => {

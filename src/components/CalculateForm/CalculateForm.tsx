@@ -1,24 +1,12 @@
 import {isNumber} from "../../utils/validators/validators";
 import React from "react";
 import {SubmitHandler, useForm} from "react-hook-form";
+import {ActionCreatorWithPayload} from "@reduxjs/toolkit";
 
-
-function calculate(v1: number, v2: number) {
-    return v1 + v2;
-}
-function getDate(){
-    const WeekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let date = new Date();
-
-    return `${WeekDays[date.getDay()]} ${date.getDate() < 10 ? `0${date.getDate()}`
-        : date.getDate()}.${date.getMonth() < 10 ? `0${date.getMonth()}`
-        : date.getMonth()}.${date.getFullYear()} ${date.getHours() < 10 ? `0${date.getHours()}`
-        : date.getHours()}:${date.getMinutes() < 10 ? `0${date.getMinutes()}`
-        : date.getMinutes()}`;
-}
-
-interface myProps {
-    addInHistory: any
+export interface myProps {
+    addInHistory: ActionCreatorWithPayload<any>
+    getDate: () => string,
+    calculate: (value1:number, value2:number) => number,
 }
 type Inputs = {
     field1: number,
@@ -29,8 +17,8 @@ const CalculateForm = (props: myProps) => {
 
     const {handleSubmit, register, formState: {errors}} = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = formData => {
-        const date = getDate();
-        let result: number = calculate(+formData.field1, +formData.field2)
+        const date = props.getDate();
+        let result: number = props.calculate(+formData.field1, +formData.field2)
         props.addInHistory({date: date, result: result, valueFromField1: formData.field1, valueFromField2: formData.field2})
     };
 
