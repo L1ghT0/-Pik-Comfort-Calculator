@@ -1,14 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import HomePage from "./components/HomePage/HomePage";
 import {Routes, Route} from "react-router";
-import CalculateForm from "./components/CalculateForm/CalculateForm";
 import Header from "./components/Header/Header";
 import HistoryContainer from "./components/History/HistoryContainer";
 import CalculateFormContainer from "./components/CalculateForm/CalculateFormContainer";
+import {initializeHistory} from "./redux/historyReducer/HistoryReducer";
+import { connect } from 'react-redux';
+import { ActionCreator } from '@reduxjs/toolkit';
 
+interface IApp {
+    initializeHistory: ActionCreator<any>
+}
 
-function App() {
+function App(props: IApp) {
 
     return (
         <div className="app-wrapper">
@@ -24,4 +29,9 @@ function App() {
     );
 }
 
-export default App;
+const mapStateToProps = () => {
+    return {
+    }
+}
+
+export default connect(mapStateToProps, {initializeHistory})(App);
