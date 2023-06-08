@@ -26,8 +26,11 @@ const historySlice = createSlice({
                 state.results = state.results.filter(item => !action.payload.includes(item.id))
             }
         },
+        addInHistory(state, action: PayloadAction<object>){
+            state.results.push({...action.payload, id: `${state.results.length+1}`})
+        }
     }
 });
 
-export const {initializeHistory, remove} = historySlice.actions
+export const {initializeHistory, remove, addInHistory} = historySlice.actions
 export default historySlice.reducer
