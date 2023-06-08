@@ -8,12 +8,7 @@ interface historyState {
 }
 
 let initialState = {
-    results: [
-        // {date: "date", result: "result", valueFromField1: "test1", valueFromField2: "test1", id: '1'},
-        // {date: "date", result: "result", valueFromField1: "test2", valueFromField2: "test2", id: '2'},
-        // {date: "date", result: "result", valueFromField1: "test3", valueFromField2: "test3", id: '3'},
-        // {date: "date", result: "result", valueFromField1: "test4", valueFromField2: "test4", id: '4'},
-    ],
+    results: [],
     newCookie: !isEmpty((new Cookies()).getAll()),
 } as historyState
 
@@ -33,7 +28,7 @@ const historySlice = createSlice({
                 state.newCookie = false;
             }
         },
-        remove(state, action: PayloadAction<Array<string>>) {
+        removeCookie(state, action: PayloadAction<Array<string>>) {
             const cookies = new Cookies();
             if (action.payload) {
                 let ArrCookies: any = Object.entries(cookies.getAll());
@@ -45,7 +40,7 @@ const historySlice = createSlice({
                 });
             }
         },
-        addInHistory(state, action: PayloadAction<object>){
+        addCookie(state, action: PayloadAction<object>){
             const cookies = new Cookies();
             cookies.set(`${state.results.length+1}`, {...action.payload}, { path: '/' });
             state.newCookie = true;
@@ -62,5 +57,5 @@ function isEmpty(obj:object) {
     return true;
 }
 
-export const {initializeHistory, remove, addInHistory} = historySlice.actions
+export const {initializeHistory, removeCookie, addCookie} = historySlice.actions
 export default historySlice.reducer

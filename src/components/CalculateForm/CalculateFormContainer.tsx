@@ -1,6 +1,6 @@
 import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 import { connect } from "react-redux";
-import { addInHistory } from "../../redux/historyReducer/HistoryReducer";
+import { addCookie } from "../../redux/historyReducer/HistoryReducer";
 import CalculateForm from "./CalculateForm";
 
 function calculate(value1: number, value2: number) {
@@ -19,14 +19,14 @@ function getDate(){
 }
 
 
-interface myProps {
-    addInHistory: ActionCreatorWithPayload<any>
+interface ICalculateFormContainer {
+    addCookie: ActionCreatorWithPayload<any>
 }
 
-const CalculateFormContainer = (props: myProps) => {
+const CalculateFormContainer = (props: ICalculateFormContainer) => {
 
     return(
-        <CalculateForm addInHistory={props.addInHistory} calculate={calculate} getDate={getDate}/>
+        <CalculateForm addCookie={props.addCookie} calculate={calculate} getDate={getDate}/>
     )
 }
 
@@ -36,4 +36,4 @@ const mapStateToProps = () => {
     }
 }
 
-export default connect(mapStateToProps,{addInHistory})(CalculateFormContainer)
+export default connect(mapStateToProps,{addCookie})(CalculateFormContainer)

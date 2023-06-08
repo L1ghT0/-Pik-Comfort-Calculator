@@ -5,16 +5,16 @@ type Inputs = {
     remove: boolean,
 }
 
-interface myProps {
+interface IHistory {
     results: Array<any>
-    remove: ActionCreatorWithPayload<any>
+    removeCookie: ActionCreatorWithPayload<any>
 }
 
-const History = (props: myProps) => {
+const History = (props: IHistory) => {
 
     const {handleSubmit, register, formState: {errors}} = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = formData => {
-        props.remove(formData.remove);
+        props.removeCookie(formData.remove);
     };
 
     let elements = props.results.map(item => {

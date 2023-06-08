@@ -3,8 +3,8 @@ import React from "react";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {ActionCreatorWithPayload} from "@reduxjs/toolkit";
 
-export interface myProps {
-    addInHistory: ActionCreatorWithPayload<any>
+export interface ICalculateForm {
+    addCookie: ActionCreatorWithPayload<any>
     getDate: () => string,
     calculate: (value1:number, value2:number) => number,
 }
@@ -13,13 +13,13 @@ type Inputs = {
     field2: number,
 }
 
-const CalculateForm = (props: myProps) => {
+const CalculateForm = (props: ICalculateForm) => {
 
     const {handleSubmit, register, formState: {errors}} = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = formData => {
         const date = props.getDate();
         let result: number = props.calculate(+formData.field1, +formData.field2)
-        props.addInHistory({date: date, result: result, valueFromField1: formData.field1, valueFromField2: formData.field2})
+        props.addCookie({date: date, result: result, valueFromField1: formData.field1, valueFromField2: formData.field2})
     };
 
     return (
