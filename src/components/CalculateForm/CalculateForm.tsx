@@ -3,9 +3,10 @@ import React from "react";
 import Cookies from "universal-cookie";
 import {SubmitHandler, useForm} from "react-hook-form";
 
-interface myProps{
+interface myProps {
 
 }
+
 type Inputs = {
     field1: number,
     field2: number,
@@ -15,15 +16,26 @@ function calculate(v1: number, v2: number) {
     return v1 + v2;
 }
 
+function getDate(){
+    const WeekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let date = new Date();
+
+    return `${WeekDays[date.getDay()]} ${date.getDate() < 10 ? `0${date.getDate()}`
+        : date.getDate()}.${date.getMonth() < 10 ? `0${date.getMonth()}`
+        : date.getMonth()}.${date.getFullYear()} ${date.getHours() < 10 ? `0${date.getHours()}`
+        : date.getHours()}:${date.getMinutes() < 10 ? `0${date.getMinutes()}`
+        : date.getMinutes()}`;
+}
+
 const CalculateForm = (props: myProps) => {
     let coockie = new Cookies()
 
-
     const {handleSubmit, register, formState: {errors}} = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = formData => {
-        console.log(formData);
+        const date = getDate();
         let result: number = calculate(+formData.field1, +formData.field2)
         console.log(result);
+        console.log(date);
         //coockie.set("",result, {})
     };
 
