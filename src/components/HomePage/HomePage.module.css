@@ -1,0 +1,32 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.description{
+    outline: none;
+    box-shadow: 3px 3px 8px 1px rgba(0, 0, 0, .1);
+    border-radius: 30px;
+    padding: 15px 12px;
+    padding-left: 30px;
+    align-items: flex-start;
+    width: 250px;
+    max-width: 400px;
+    min-height: 150px;
+    justify-content: space-between;
+    word-wrap: break-word;
+
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.history{
+
+}
+
+.calculate{
+
+}
