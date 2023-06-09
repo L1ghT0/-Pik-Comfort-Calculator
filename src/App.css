@@ -1,5 +1,14 @@
 .app-wrapper{
+    height: 100%;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    grid-auto-flow: row;
+}
+
+.app-wrapper-content{
     max-width: 1200px;
     margin: 0 auto;
-    background-color: white;
+    width: 1200px;
+    display: flex;
 }
