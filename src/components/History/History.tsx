@@ -1,6 +1,8 @@
 import {SubmitHandler, useForm} from "react-hook-form";
 import {ActionCreatorWithPayload} from "@reduxjs/toolkit";
 import HistoryClasses from "./History.module.css"
+import ButtonsClasses from "./../../common/buttons/Buttons.module.css"
+
 
 type Inputs = {
     remove: boolean,
@@ -36,7 +38,7 @@ const History = (props: IHistory) => {
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {elements}
-                <input type="submit" value="Delete" className={HistoryClasses.submitButton}/>
+                <input type="submit" value="Delete" className={ButtonsClasses.ButtonBasicStyles}/>
             </form>
         </div>
     )
