@@ -1,0 +1,22 @@
+.inputWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.inputWrapper input {
+    text-decoration: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 100px;
+    box-shadow: 3px 3px 8px 1px rgba(0, 0, 0, .3);
+    margin-right: 10px;
+
+}
+.submitButton{
+    display: flex;
+    margin-top: 20px;
+}
+.submitButton input{
+    font-size: 15px;
+
+}
