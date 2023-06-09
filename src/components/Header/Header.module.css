@@ -1,0 +1,9 @@
+.header_page{
+    width: 100%;
+
+}
+
+.header_page div{
+    max-width: 1200px;
+    margin: 0 auto;
+}

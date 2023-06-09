@@ -1,7 +1,7 @@
 .historyItem {
     display: flex;
     outline: none;
-    margin-top: 20px;
+    margin-bottom: 20px;
     box-shadow: 3px 3px 8px 1px rgba(0, 0, 0, .1);
     border-radius: 30px;
     padding: 15px 12px;

@@ -1,16 +1,18 @@
-import { NavLink } from "react-router-dom"
+import {NavLink} from "react-router-dom"
+import HeaderClasses from "./Header.module.css"
 
-interface myProps{
+
+interface myProps {
 
 }
 
 const Header = (props: myProps) => {
     return (
-        <div>
-            <header>
+        <header className={HeaderClasses.header_page}>
+            <div >
                 <NavLink to='/'>Home</NavLink>
-            </header>
-        </div>
+            </div>
+        </header>
     )
 }
 
