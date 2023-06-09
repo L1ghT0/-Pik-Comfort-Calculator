@@ -1,5 +1,6 @@
 import {SubmitHandler, useForm} from "react-hook-form";
 import {ActionCreatorWithPayload} from "@reduxjs/toolkit";
+import HistoryClasses from "./History.module.css"
 
 type Inputs = {
     remove: boolean,
@@ -19,9 +20,14 @@ const History = (props: IHistory) => {
 
     let elements = props.results.map(item => {
         return (
-            <div key={item.id}>
+            <div key={item.id} className={HistoryClasses.historyItem}>
+                <div>
+                    <span>Date: {item.date}</span><br/>
+                    <span>Value from field1: {item.valueFromField1}</span><br/>
+                    <span>Value from field2: {item.valueFromField2}</span><br/>
+                    <span>Result: {item.result}</span>
+                </div>
                 <input type="checkbox" value={item.id} {...register("remove",)}/>
-                <span >{item.date}__{item.result}__{item.valueFromField1}__{item.valueFromField2}</span>
             </div>
         )
     });
@@ -30,7 +36,7 @@ const History = (props: IHistory) => {
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {elements}
-                <input type="submit"/>
+                <input type="submit" value="Delete" className={HistoryClasses.submitButton}/>
             </form>
         </div>
     )
