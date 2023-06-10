@@ -49,7 +49,7 @@ const History = (props: IHistory) => {
             </div>
         )
     });
-    console.log(readyToRemove);
+    
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
