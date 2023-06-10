@@ -42,7 +42,7 @@ const historySlice = createSlice({
         },
         addCookie(state, action: PayloadAction<object>){
             const cookies = new Cookies();
-            cookies.set(`${state.results.length+1}`, {...action.payload}, { path: '/' });
+            cookies.set(`${Object.entries(cookies.getAll()).length + 1}`, {...action.payload}, { path: '/' });
             state.newCookie = true;
         }
     }
