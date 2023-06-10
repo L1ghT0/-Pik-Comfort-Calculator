@@ -54,7 +54,7 @@ const History = (props: IHistory) => {
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {elements}
-                {elements.length ? undefined : <span className={HistoryClasses.noRecords}>No records</span>}
+                {elements.length ? undefined : <div className={HistoryClasses.noRecords}>No records</div>}
                 {readyToRemove.length ? <input type="submit" value="Delete" className={ButtonsClasses.ButtonBasicStyles}/> : undefined}
             </form>
         </div>
