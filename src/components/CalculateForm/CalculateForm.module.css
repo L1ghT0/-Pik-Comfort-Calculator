@@ -12,6 +12,16 @@
     flex-direction: column;
     gap: 15px;
 }
+.inputWrapper div{
+    position: relative;
+}
+.inputWrapper div span{
+    position: absolute;
+    width: 300px;
+    left: 270px;
+    top: 7px;
+    color: red;
+}
 .inputWrapper input {
     text-decoration: none;
     outline: none;
@@ -19,6 +29,10 @@
     border-radius: 100px;
     box-shadow: 3px 3px 8px 1px rgba(0, 0, 0, .3);
     margin-right: 10px;
+}
+.inputWrapper .fieldError{
+    border: 2px solid red;
+    box-shadow: 3px 3px 8px 1px rgba(255, 0, 0, .3);
 }
 
 .submitButton{

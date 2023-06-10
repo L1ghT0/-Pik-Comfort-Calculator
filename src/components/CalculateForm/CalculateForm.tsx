@@ -45,7 +45,7 @@ const CalculateForm = (props: ICalculateForm) => {
                                        required: 'This field is required',
                                        validate: {v: (v) => isNumber(v) || "value is not a number"}
                                    })}
-                               className={errors.field1 ? "field1 Error" : undefined}/>
+                               className={errors.field1 ? CalculateFormClasses.fieldError : undefined}/>
                         {errors.field1 && <span>{errors.field1?.message}</span>}
                     </div>
                     <div>
@@ -56,7 +56,7 @@ const CalculateForm = (props: ICalculateForm) => {
                                        required: 'This field is required',
                                        validate: {v: (v) => isNumber(v) || "Value is not a number"}
                                    })}
-                               className={errors.field2 ? "passwordError" : undefined}/>
+                               className={errors.field2 ? CalculateFormClasses.fieldError : undefined}/>
                         {errors.field2 && <span>{errors.field2?.message}</span>}
                     </div>
                     <div className={CalculateFormClasses.submitButton}>
