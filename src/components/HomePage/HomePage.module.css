@@ -26,11 +26,8 @@
     display: flex;
     justify-content: space-between;
 }
-
-.history{
-
-}
-
-.calculate{
-
+.calculate:hover,
+.history:hover{
+    transform: scale(1.03);
+    cursor: pointer;
 }
