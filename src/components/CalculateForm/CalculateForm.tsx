@@ -1,5 +1,5 @@
 import {isNumber} from "../../utils/validators/validators";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {ActionCreatorWithPayload} from "@reduxjs/toolkit";
 import ButtonsClasses from "./../../common/buttons/Buttons.module.css"
@@ -20,7 +20,7 @@ type Inputs = {
 const CalculateForm = (props: ICalculateForm) => {
     let [result, setResult] = useState<number>(0)
 
-    const {handleSubmit, register, formState: {errors}} = useForm<Inputs>();
+    const {handleSubmit, reset, register, formState: {errors, isSubmitSuccessful}} = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = formData => {
         const date = props.getDate();
         let result: number = props.calculate(+formData.field1, +formData.field2)
@@ -32,6 +32,12 @@ const CalculateForm = (props: ICalculateForm) => {
             valueFromField2: formData.field2
         })
     };
+
+    useEffect(()=> {
+        if(isSubmitSuccessful){
+            reset();
+        }
+    }, [isSubmitSuccessful, reset])
 
     return (
         <div className={CalculateFormClasses.formWrapper}>
