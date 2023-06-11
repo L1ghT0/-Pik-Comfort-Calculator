@@ -49,7 +49,8 @@ const CalculateForm = (props: ICalculateForm) => {
                                    "field1",
                                    {
                                        required: 'This field is required',
-                                       validate: {v: (v) => isNumber(v) || "value is not a number"}
+                                       validate: {isNumber: (v) => isNumber(v) || "Value is not a number",},
+                                       maxLength : { value: 10, message: 'Max length is 10 symbols' },
                                    })}
                                className={errors.field1 ? CalculateFormClasses.fieldError : undefined}/>
                         {errors.field1 && <span>{errors.field1?.message}</span>}
@@ -60,7 +61,8 @@ const CalculateForm = (props: ICalculateForm) => {
                                    "field2",
                                    {
                                        required: 'This field is required',
-                                       validate: {v: (v) => isNumber(v) || "Value is not a number"}
+                                       validate: {isNumber: (v) => isNumber(v) || "Value is not a number",},
+                                       maxLength : { value: 10, message: 'Max length is 10 symbols' },
                                    })}
                                className={errors.field2 ? CalculateFormClasses.fieldError : undefined}/>
                         {errors.field2 && <span>{errors.field2?.message}</span>}
