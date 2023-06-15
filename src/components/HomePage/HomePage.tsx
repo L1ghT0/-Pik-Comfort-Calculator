@@ -15,7 +15,8 @@ const HomePage = (props: myProps) => {
                 to calculate the payment for water heating. <br/>
                 The calculator used is only suitable for everyone who lives in <span>"Пик комфорт"</span> apartments. <br/>
                 The application also has a history of your results; however,
-                it keeps your data locally which means you can not see your history using another device or browser.
+                it keeps your data locally which means you can not see your history using another device or browser. <br/>
+                <span className={HomePageClasses.warning}>Warning:<br/> The calculator temporarily provides with an incorrect result. The issue will be fixed soon </span>
             </div>
             <div className={HomePageClasses.buttons}>
                 <div className={HomePageClasses.history}>
