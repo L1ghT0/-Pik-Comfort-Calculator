@@ -1,7 +1,6 @@
 .wrapper{
     display: flex;
     flex-direction: column;
-    gap: 30px;
 }
 
 .description{
@@ -23,6 +22,7 @@
 }
 
 .buttons{
+    margin-top: 30px;
     display: flex;
     justify-content: space-between;
 }
