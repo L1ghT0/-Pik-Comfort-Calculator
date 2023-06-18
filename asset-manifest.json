@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/-Pik-Comfort-Calculator/static/css/main.9a4ad34f.css",
+    "main.css": "/-Pik-Comfort-Calculator/static/css/main.2972ff37.css",
     "main.js": "/-Pik-Comfort-Calculator/static/js/main.d4161c08.js",
     "index.html": "/-Pik-Comfort-Calculator/index.html",
-    "main.9a4ad34f.css.map": "/-Pik-Comfort-Calculator/static/css/main.9a4ad34f.css.map",
+    "main.2972ff37.css.map": "/-Pik-Comfort-Calculator/static/css/main.2972ff37.css.map",
     "main.d4161c08.js.map": "/-Pik-Comfort-Calculator/static/js/main.d4161c08.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a4ad34f.css",
+    "static/css/main.2972ff37.css",
     "static/js/main.d4161c08.js"
   ]
 }
