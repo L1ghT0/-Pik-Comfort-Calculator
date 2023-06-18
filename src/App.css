@@ -1,4 +1,5 @@
 .app-wrapper{
+    margin-left: 10px;
     height: 100%;
     background-color: white;
     display: grid;
@@ -13,3 +14,19 @@
     display: flex;
     margin-top: 15px;
 }
+
+@media (max-width:480px)  {
+    /* smartphones, Android phones, landscape iPhone */
+        .app-wrapper-content{
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            display: flex;
+            margin-top: 15px;
+        }
+    .app-wrapper{
+        margin-left: 0;
+    }
+
+}
+
