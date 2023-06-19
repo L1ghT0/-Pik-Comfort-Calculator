@@ -5,6 +5,9 @@
     border: 0;
     border-radius: 100px;
     box-shadow: 3px 3px 6px 2px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 3px 3px 6px 2px rgba(0, 0, 0, .1);
+    -webkit-appearance: none;
+    -moz-box-shadow: 3px 3px 6px 2px rgba(0, 0, 0, .1);
     padding: 10px 30px;
     background-color: white;
 }
@@ -12,6 +15,8 @@
 .ButtonBasicStyles:hover{
     outline: none;
     box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, .2);
     cursor: pointer;
     transform: scale(1.02);
 }
