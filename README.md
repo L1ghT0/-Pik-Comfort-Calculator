@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Gh-pages: 
+
+The hosting of the calculator at the link below:
+
+https://l1ght0.github.io/-Pik-Comfort-Calculator/#/
+
 ## Available Scripts
 
 In the project directory, you can run:
